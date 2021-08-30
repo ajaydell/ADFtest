@@ -1,0 +1,30 @@
+{
+	"name": "cicd",
+	"properties": {
+		"activities": [
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "test2",
+					"value": {
+						"value": "@variables('test1')",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"variables": {
+			"test1": {
+				"type": "String",
+				"defaultValue": "cicd"
+			},
+			"test2": {
+				"type": "String"
+			}
+		},
+		"annotations": []
+	}
+}
