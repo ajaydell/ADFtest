@@ -1,0 +1,9 @@
+{
+	"name": "ADFARMtest",
+	"location": "westus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "0489b18f-e5bc-45d3-af87-40911e97aff1",
+		"tenantId": "fbd6f52a-14d3-4a51-85d4-e21ee0cff8dd"
+	}
+}
