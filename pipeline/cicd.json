@@ -10,7 +10,7 @@
 				"typeProperties": {
 					"variableName": "test2",
 					"value": {
-						"value": "@variables('test1')",
+						"value": "@pipeline().globalParameters.adfaccounturl",
 						"type": "Expression"
 					}
 				}
