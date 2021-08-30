@@ -1,5 +1,13 @@
 {
 	"name": "ADFARMtest",
+	"properties": {
+		"globalParameters": {
+			"test": {
+				"type": "string",
+				"value": "ADFARMtest"
+			}
+		}
+	},
 	"location": "westus",
 	"identity": {
 		"type": "SystemAssigned",
