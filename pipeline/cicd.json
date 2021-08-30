@@ -10,7 +10,7 @@
 				"typeProperties": {
 					"variableName": "test2",
 					"value": {
-						"value": "@pipeline().globalParameters.adfaccounturl",
+						"value": "@concat('https//',pipeline().globalParameters.purview,'.catalog.purview.azure.com/api/atlas/v2/search/suggest')",
 						"type": "Expression"
 					}
 				}
