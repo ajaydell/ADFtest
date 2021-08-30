@@ -13,6 +13,10 @@
 			"adfaccounturl": {
 				"type": "string",
 				"value": "https://portal.azure.com/"
+			},
+			"purview": {
+				"type": "string",
+				"value": "euwdctptdfapw01"
 			}
 		}
 	},
