@@ -20,6 +20,10 @@
 			"pram1": {
 				"type": "string",
 				"defaultValue": "ajay"
+			},
+			"pram2": {
+				"type": "string",
+				"defaultValue": "aj"
 			}
 		},
 		"variables": {
