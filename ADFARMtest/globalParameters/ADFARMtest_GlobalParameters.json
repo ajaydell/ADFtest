@@ -1,0 +1,18 @@
+{
+	"test": {
+		"type": "string",
+		"value": "ADFARMtest"
+	},
+	"dilip": {
+		"type": "string",
+		"value": "DE_MAster"
+	},
+	"adfaccounturl": {
+		"type": "string",
+		"value": "https://portal.azure.com/"
+	},
+	"purview": {
+		"type": "string",
+		"value": "euwdctptdfapw01"
+	}
+}

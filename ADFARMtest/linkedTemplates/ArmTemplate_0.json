@@ -1,0 +1,137 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "ADFARMtest"
+		},
+		"AzureBlobStorage_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage'"
+		},
+		"dataFactory_properties_globalParameters_test_value": {
+			"type": "string",
+			"defaultValue": "ADFARMtest"
+		},
+		"dataFactory_properties_globalParameters_dilip_value": {
+			"type": "string",
+			"defaultValue": "DE_MAster"
+		},
+		"dataFactory_properties_globalParameters_adfaccounturl_value": {
+			"type": "string",
+			"defaultValue": "https://portal.azure.com/"
+		},
+		"dataFactory_properties_globalParameters_purview_value": {
+			"type": "string",
+			"defaultValue": "euwdctptdfapw01"
+		},
+		"dataFactory_location": {
+			"type": "string",
+			"defaultValue": "westus"
+		},
+		"dataFactory_identity_type": {
+			"type": "string",
+			"defaultValue": "SystemAssigned"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[parameters('factoryName')]",
+			"type": "Microsoft.DataFactory/factories",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"globalParameters": {
+					"test": {
+						"type": "string",
+						"value": "[parameters('dataFactory_properties_globalParameters_test_value')]"
+					},
+					"dilip": {
+						"type": "string",
+						"value": "[parameters('dataFactory_properties_globalParameters_dilip_value')]"
+					},
+					"adfaccounturl": {
+						"type": "string",
+						"value": "[parameters('dataFactory_properties_globalParameters_adfaccounturl_value')]"
+					},
+					"purview": {
+						"type": "string",
+						"value": "[parameters('dataFactory_properties_globalParameters_purview_value')]"
+					}
+				}
+			},
+			"dependsOn": [],
+			"location": "[parameters('dataFactory_location')]",
+			"identity": {
+				"type": "[parameters('dataFactory_identity_type')]"
+			}
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/cicd')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Set variable1",
+						"type": "SetVariable",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"variableName": "test2",
+							"value": {
+								"value": "@concat('https//',pipeline().globalParameters.purview,'.catalog.purview.azure.com/api/atlas/v2/search/suggest')",
+								"type": "Expression"
+							}
+						}
+					}
+				],
+				"parameters": {
+					"pram1": {
+						"type": "string",
+						"defaultValue": "ajay"
+					},
+					"pram2": {
+						"type": "string",
+						"defaultValue": "aj"
+					}
+				},
+				"variables": {
+					"test1": {
+						"type": "String",
+						"defaultValue": "cicd"
+					},
+					"test2": {
+						"type": "String"
+					}
+				},
+				"annotations": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureBlobStorage')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "test",
+				"parameters": {
+					"storageaccountname": {
+						"type": "String",
+						"defaultValue": "adfstgtest"
+					}
+				},
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureBlobStorage_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
