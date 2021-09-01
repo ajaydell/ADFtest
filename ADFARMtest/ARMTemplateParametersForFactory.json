@@ -29,5 +29,13 @@
 		"dataFactory_identity_type": {
 			"value": "SystemAssigned"
 		}
+		,
+		"domain": {
+			"value": "@linkedService().databricksurl"
+		}
+		,
+		"existingClusterId": {
+			"value": "@linkedService().clusterid"
+		}
 	}
 }
