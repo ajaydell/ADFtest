@@ -24,6 +24,9 @@
 			"pram2": {
 				"type": "string",
 				"defaultValue": "aj"
+			},
+			"databricksurl": {
+				"type": "string"
 			}
 		},
 		"variables": {
