@@ -1,0 +1,16 @@
+{
+	"name": "AzureDatabricks",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureDatabricks",
+		"typeProperties": {
+			"domain": "@{pipeline().parameters.databricksurl}",
+			"accessToken": {
+				"type": "SecureString",
+				"value": "**********"
+			},
+			"existingClusterId": "@{pipeline().parameters.clusterid}"
+		}
+	}
+}
