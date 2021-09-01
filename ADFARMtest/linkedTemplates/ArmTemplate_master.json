@@ -15,6 +15,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks1'"
 		},
+		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "@linkedService().clusterid"
+		},
 		"dataFactory_properties_globalParameters_test_value": {
 			"type": "string",
 			"defaultValue": "ADFARMtest"
@@ -89,6 +93,9 @@
 					},
 					"dataFactory_identity_type": {
 						"value": "[parameters('dataFactory_identity_type')]"
+					},
+					"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('AzureDatabricks1_properties_typeProperties_existingClusterId')]"
 					}
 				}
 			},

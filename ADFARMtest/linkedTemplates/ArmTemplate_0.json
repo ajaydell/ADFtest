@@ -38,6 +38,10 @@
 		"dataFactory_identity_type": {
 			"type": "string",
 			"defaultValue": "SystemAssigned"
+		},
+		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "@linkedService().clusterid"
 		}
 	},
 	"variables": {
@@ -161,7 +165,7 @@
 						"type": "SecureString",
 						"value": "[parameters('AzureDatabricks1_accessToken')]"
 					},
-					"existingClusterId": "@linkedService().clusterid"
+					"existingClusterId": "[parameters('AzureDatabricks1_properties_typeProperties_existingClusterId')]"
 				}
 			},
 			"dependsOn": []

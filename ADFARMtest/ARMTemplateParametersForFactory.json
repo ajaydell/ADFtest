@@ -11,6 +11,9 @@
 		"AzureDatabricks1_accessToken": {
 			"value": ""
 		},
+		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+			"value": "@linkedService().clusterid"
+		},
 		"dataFactory_properties_globalParameters_test_value": {
 			"value": "ADFARMtest"
 		},
@@ -28,13 +31,6 @@
 		},
 		"dataFactory_identity_type": {
 			"value": "SystemAssigned"
-		},
-		"domain": {
-			"value": "@linkedService().databricksurl"
-		}
-		,
-		"existingClusterId": {
-			"value": "@linkedService().clusterid"
 		}
 	}
 }
