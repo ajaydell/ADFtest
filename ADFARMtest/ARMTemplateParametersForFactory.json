@@ -8,6 +8,9 @@
 		"AzureBlobStorage_connectionString": {
 			"value": ""
 		},
+		"AzureDatabricks1_accessToken": {
+			"value": ""
+		},
 		"dataFactory_properties_globalParameters_test_value": {
 			"value": "ADFARMtest"
 		},

@@ -11,6 +11,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage'"
 		},
+		"AzureDatabricks1_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks1'"
+		},
 		"dataFactory_properties_globalParameters_test_value": {
 			"type": "string",
 			"defaultValue": "ADFARMtest"
@@ -64,6 +68,9 @@
 					},
 					"AzureBlobStorage_connectionString": {
 						"value": "[parameters('AzureBlobStorage_connectionString')]"
+					},
+					"AzureDatabricks1_accessToken": {
+						"value": "[parameters('AzureDatabricks1_accessToken')]"
 					},
 					"dataFactory_properties_globalParameters_test_value": {
 						"value": "[parameters('dataFactory_properties_globalParameters_test_value')]"
