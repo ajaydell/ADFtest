@@ -115,7 +115,8 @@
                     "sasToken": "|",
                     "connectionString": "|:-connectionString:secureString",
                     "hostKeyFingerprint": "=",
-                    "existingClusterId": "="
+                    "existingClusterId": "=",
+                    "Databrick Workspace URL": "="
                 }
             }
         },
