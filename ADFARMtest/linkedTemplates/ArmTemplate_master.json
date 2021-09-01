@@ -15,6 +15,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks1'"
 		},
+		"AzureDatabricks1_properties_typeProperties_domain": {
+			"type": "string",
+			"defaultValue": "@linkedService().databricksurl"
+		},
 		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
 			"type": "string",
 			"defaultValue": "@linkedService().clusterid"
@@ -93,6 +97,9 @@
 					},
 					"dataFactory_identity_type": {
 						"value": "[parameters('dataFactory_identity_type')]"
+					},
+					"AzureDatabricks1_properties_typeProperties_domain": {
+						"value": "[parameters('AzureDatabricks1_properties_typeProperties_domain')]"
 					},
 					"AzureDatabricks1_properties_typeProperties_existingClusterId": {
 						"value": "[parameters('AzureDatabricks1_properties_typeProperties_existingClusterId')]"

@@ -39,6 +39,10 @@
 			"type": "string",
 			"defaultValue": "SystemAssigned"
 		},
+		"AzureDatabricks1_properties_typeProperties_domain": {
+			"type": "string",
+			"defaultValue": "@linkedService().databricksurl"
+		},
 		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
 			"type": "string",
 			"defaultValue": "@linkedService().clusterid"
@@ -160,7 +164,7 @@
 				"annotations": [],
 				"type": "AzureDatabricks",
 				"typeProperties": {
-					"domain": "@linkedService().databricksurl",
+					"domain": "[parameters('AzureDatabricks1_properties_typeProperties_domain')]",
 					"accessToken": {
 						"type": "SecureString",
 						"value": "[parameters('AzureDatabricks1_accessToken')]"

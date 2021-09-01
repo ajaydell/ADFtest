@@ -11,6 +11,9 @@
 		"AzureDatabricks1_accessToken": {
 			"value": ""
 		},
+		"AzureDatabricks1_properties_typeProperties_domain": {
+			"value": "@linkedService().databricksurl"
+		},
 		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
 			"value": "@linkedService().clusterid"
 		},
