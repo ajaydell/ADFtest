@@ -6,7 +6,7 @@ resources:
   repositories:
   - repository: Git-POC
     type: github
-    endpoint: MyGitHubServiceConnection
+    endpoint: ajaydell
     name: ajaydell/Git-POC
     ref: master
 
