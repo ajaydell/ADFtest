@@ -1,3 +1,7 @@
+trigger: none
+pr: none
+pool:
+  vmImage: 'vs2017-win2016'
 resources:
   repositories:
   - repository: Git-POC
@@ -8,11 +12,5 @@ resources:
 
 steps:
 - checkout: Git-POC
-
-trigger: none
-pr: none
-pool:
-  vmImage: 'vs2017-win2016'
-steps:
-  - template: resource.azure.yml@Git-POC
+- template: resource.azure.yml@Git-POC
   
