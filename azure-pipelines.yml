@@ -12,5 +12,5 @@ resources:
 
 steps:
 - checkout: Git-POC
-- template: resource.azure.yml@Git-POC
+- template: resource.azure.yml
   
