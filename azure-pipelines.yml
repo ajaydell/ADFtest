@@ -1,15 +1,18 @@
 resources:
   repositories:
-  - repository: ADFtest
+  - repository: Git-POC
     type: github
     endpoint: MyGitHubServiceConnection
-    name: ajaydell/ADFtest
-    ref: main
+    name: ajaydell/Git-POC
+    ref: master
 
 steps:
-- checkout: ADFtest
+- checkout: Git-POC
+
 trigger: none
 pr: none
 pool:
   vmImage: 'vs2017-win2016'
+steps:
+  - template: resource.azure.yml@Git-POC
   
